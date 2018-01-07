@@ -1,0 +1,140 @@
+ body,html,#container{
+    height: 100%;
+    margin: 0px;
+    font:12px Arial;
+}
+.circle{
+    border-radius: 6px;
+    /*border: solid 1px silver;*/
+    width: 120px;
+    height: 16px;
+    padding: 3px;
+    text-align: center;
+    line-height: 18px;
+    max-width: 50px;
+    color:white;
+    
+}
+.amap-info-content{
+    border: 0;
+    background:transparent;
+    background-image: url("./img/info-bg.png");
+    background-size: cover;
+}
+
+.amap-info-sharp{
+ top: -2px;
+}
+.amap-info-content p, .content p{
+    margin: 0;
+    margin: 5px 0;
+    font-size: 16px;
+    color: #fff;
+    animation:font 2s infinite ;
+    -webkit-animation:font 2s ;
+    animation-fill-mode:forwards;
+}
+@keyframes font{
+    0%{
+        color: transparent;
+    }
+    100%{
+        color: #fff;
+    }
+
+}
+.amap-info-content p:nth-child(1) ,.content p:nth-child(1){
+    color: #38d4f5;
+    font-weight: bold;
+    font-size: 20px;;
+}
+.amap-info-content a, .content a{
+    color: #38d4f5;
+    font-size: 14px;
+    animation:font 2s infinite ;
+    -webkit-animation:a 2s ;
+    animation-fill-mode:forwards;
+}
+@keyframes a{
+    0%{
+        color: transparent;
+    }
+    100%{
+        color:  #38d4f5;
+    }
+
+}
+.amap-info-content a:focus{
+    color: #38d4f5;
+}
+#container .home{
+    display: inline-block;
+    position: absolute;
+    color: white;
+    top: 10px;
+    right: 20px;
+    background-color: #c9caca;
+    z-index: 10000;
+    width:90px;
+    line-height:41px;
+    text-align: center;
+}
+.amap-info-sharp{
+    display: none;
+}
+.amap-toolbar{
+    top:0px !important;
+    left: 0px !important;
+}
+.amap-pancontrol,.amap-locate{
+    display: none !important;
+}
+.nameSpan{
+    color: #fff;
+    width: 150px;
+}
+.contBg{
+    
+}
+.light_pos{
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    color: #fff;
+    font-size: 14px;
+}
+.light{
+    display: inline-block;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+.cont{
+    position: absolute;
+    top: -2px;
+    width: 80px;
+    right: 3px;
+}
+.amap-info-close{
+    right: 5px !important;
+}
+.spanStyle{
+    font-size: 12px;
+    color: #ffffff;
+    
+}
+.spanStyle1{
+    font-size: 14px;
+    color: #ffffff;
+}
+.content{
+    background-image: url("../img/info-bg.png");
+    background-size: cover;
+    color: #ffffff;
+    padding: 10px 10px;
+}
+.amap-icon{
+    width:90px !important;
+    height:50px !important;
+}

@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="shortcut icon" href="/img/MDLZ_logo.png" />
+    <link rel="bookmark" href="/img/MDLZ_logo.png" type="image/x-icon"　/>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/progress.css">
+    <link rel="stylesheet" href="/stylesheets/chart.css">
+    <title>China Daily Sales Dashboard</title>
+</head>
+<body>
+<div id="container" tabindex="0">
+    <!--<a href="javascript:void(0);" onclick="closewin();" class="home">HOME</a>-->
+    <div class="topContent">
+        <h1>China Daily Sales Dashboard</h1>
+        <p>Gross Revenue as at: SEP 05, 2017( $ Millions @ AC Forex)
+        </p>
+        <h2><span>Total MTD</span><span class="mtdValue">￥118,456,456</span></h2>
+    </div>
+    <div class="leftContent">
+        <div class="timeDiv">
+            <div class="nowTime">
+
+            </div>
+            <div class="workDay">
+                <h1><span>Days In Month</span> <span>21</span></h1>
+            </div>
+            <div class="daysInvoiced">
+                <h1><span>Days Invoiced</span> <span>3</span></h1>
+            </div>
+            <div class="timePace">
+                <h1><span>Pace</span> <span>14</span>%</h1>
+            </div>
+        </div>
+        <!--<div class="GSInvoicedDay">-->
+        <!--<span class="Delivered">WP Delivered <span class="WP">119</span></span>-->
+        <!--<span>-->
+        <!--<div id="liquidFill" class="liquidFill">-->
+
+        <!--</div>-->
+        <!--</span>-->
+        <!--<span class="TTM">WP TTM <span class="WP">903</span></span>-->
+        <!--<p class="wpTitle">GS @ Invoiced Day</p>-->
+        <!--</div>-->
+        <!--<div class="fenqu" id="fenqu">-->
+
+        <!--</div>-->
+        <div class="category">
+            <h1 class="bottomContentTitle"> Overview by Category</h1>
+            <div class="Tang categoryLevel">
+                <div class="categoryLevelMargin">
+                    <div class="categoryLevelLeft">
+                        <h1>Tang</h1>
+                        <p><span></span><span>DP vs PY</span></p>
+                        <p><span></span><span>DP vs Pace</span></p>
+                    </div>
+                    <div class="categoryLevelRight" id="pbChart">
+
+                    </div>
+                    <div class="categoryLevelWp">
+                        wp:<span>7</span>
+                    </div>
+                </div>
+            </div>
+            <div class="PB categoryLevel">
+                <div class="categoryLevelMargin">
+                    <div class="categoryLevelLeft">
+                        <h1>Candy</h1>
+                        <p><span></span><span>DP vs PY</span></p>
+                        <p><span></span><span>DP vs Pace</span></p>
+                    </div>
+                    <div class="categoryLevelRight" id="CandyChart">
+
+                    </div>
+                    <div class="categoryLevelWp">
+                        wp:<span>7</span>
+                    </div>
+                </div>
+            </div>
+            <div class="PB categoryLevel">
+                <div class="categoryLevelMargin">
+                    <div class="categoryLevelLeft">
+                        <h1>GUM</h1>
+                        <p><span></span><span>DP vs PY</span></p>
+                        <p><span></span><span>DP vs Pace</span></p>
+                    </div>
+                    <div class="categoryLevelRight" id="gumChart">
+
+                    </div>
+                    <div class="categoryLevelWp">
+                        wp:<span>7</span>
+                    </div>
+                </div>
+            </div>
+            <div class="PB categoryLevel">
+                <div class="categoryLevelMargin">
+                    <div class="categoryLevelLeft">
+                        <h1>Biscuit</h1>
+                        <p><span></span><span>DP vs PY</span></p>
+                        <p><span></span><span>DP vs Pace</span></p>
+                    </div>
+                    <div class="categoryLevelRight" id="biscuitChart">
+
+                    </div>
+                    <div class="categoryLevelWp">
+                        wp:<span>7</span>
+                    </div>
+                </div>
+            </div>
+            <div class="PB categoryLevel">
+                <div class="categoryLevelMargin">
+                    <div class="categoryLevelLeft">
+                        <h1>Chocolate</h1>
+                        <p><span></span><span>DP vs PY</span></p>
+                        <p><span></span><span>DP vs Pace</span></p>
+                    </div>
+                    <div class="categoryLevelRight" id="chocolateChart">
+
+                    </div>
+                    <div class="categoryLevelWp">
+                        wp:<span>7</span>
+                    </div>
+                </div>
+            </div>
+            <div class="Cheese categoryLevel">
+                <div class="categoryLevelMargin">
+                    <div class="categoryLevelLeft">
+                        <h1>Cheese</h1>
+                        <p><span></span><span>DP vs PY</span></p>
+                        <p><span></span><span>DP vs Pace</span></p>
+                    </div>
+                    <div class="categoryLevelRight" id="cheeseChart">
+
+                    </div>
+                    <div class="categoryLevelWp">
+                        wp:<span>7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rightContent">
+        <h1>Overview by Sales Hierachy</h1>
+        <div class="rightContentContent">
+            <div class="rightContent-Content" id="kaChart">
+            </div>
+            <div class="rightContent-Content" >
+                <ul class="categoryList">
+                    <li><span class="kaAll" style="background-color:red;"></span><span>DP vs PY <em style="color: red">-1.5%</em></span></li>
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs Pace<em style="color: green">+1.5%</em></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rightContentContent">
+            <div class="rightContent-Content" id="ecChart">
+
+            </div>
+            <div class="rightContent-Content" >
+                <ul class="categoryList">
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs PY<em style="color: green">+3.5%</em></span></li>
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs Pace<em style="color: green">+1.5%</em></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rightContentContent">
+            <div class="rightContent-Content" id="afhChart">
+
+            </div>
+            <div class="rightContent-Content" >
+                <ul class="categoryList">
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs PY<em style="color: green">+3.5%</em></span></li>
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs Pace<em style="color: green">+2.5%</em></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rightContentContent">
+            <div class="rightContent-Content" id="eastChart">
+
+            </div>
+            <div class="rightContent-Content" >
+                <ul class="categoryList">
+                    <li><span class="kaAll" style="background-color:red;"></span><span>DP vs PY<em style="color: red">-1.5%</em></span></li>
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs Pace<em style="color: green">+3.5%</em></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rightContentContent">
+            <div class="rightContent-Content" id="westChart">
+
+            </div>
+            <div class="rightContent-Content" >
+                <ul class="categoryList">
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs PY<em style="color: green">+3.5%</em></span></li>
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs Pace<em style="color: green">+3.5%</em></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rightContentContent">
+            <div class="rightContent-Content" id="northChart">
+
+            </div>
+            <div class="rightContent-Content" >
+                <ul class="categoryList">
+                    <li><span class="kaAll" style="background-color:red;"></span><span>DP vs PY<em style="color: red">-3.5%</em></span></li>
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs Pace<em style="color: green">+3.5%</em></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rightContentContent">
+            <div class="rightContent-Content" id="southChart">
+
+            </div>
+            <div class="rightContent-Content" >
+                <ul class="categoryList">
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs PY<em style="color: green">+3.5%</em></span></li>
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs Pace<em style="color: green">+3.5%</em></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rightContentContent">
+            <div class="rightContent-Content" id="unmatchedChart">
+
+            </div>
+            <div class="rightContent-Content" >
+                <ul class="categoryList">
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs PY<em style="color: green">+3.5%</em></span></li>
+                    <li><span class="kaAll" style="background-color:green;"></span><span>DP vs Pace<em style="color: green">+3.5%</em></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="fenqu" id="fenqu">
+
+        </div>
+    </div>
+    <div class="bottomContent">
+        <div class="yoy" id="yoyChart">
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/javascripts/pos.js"></script>
+<!--<script src="marker.js"></script>-->
+<!-- <script src="daqu.js"></script> -->
+<script src="https://webapi.amap.com/maps?v=1.4.1&key=6307a2e6f863ba5fd0d8c050bb4d0f40"></script>
+<script src="https://webapi.amap.com/ui/1.0/main.js"></script>
+<script src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+<script src="/javascripts/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+<script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+<script type="text/javascript" src="/javascripts/echarts.min.js"></script>
+<script type="text/javascript" src="/javascripts/echarts-liquidfill.min.js"></script>
+<script type="text/javascript" src="/javascripts/mdlzChart.js"></script>
+
+
+
+</body>
+<script>
+    function closewin(){
+        if (navigator.userAgent.indexOf("Firefox") != -1 || navigator.userAgent.indexOf("Chrome") !=-1) {
+            window.open('','_self','');
+            window.close();
+            // window.open("about:blank","_top").close()
+        } else {
+            window.opener = null;
+            window.open("", "_self");
+            window.close();
+            //window.open("about:blank","_top").close()
+        }
+    }
+</script>
+<script type="text/javascript" src="/javascripts/Gd-map.js"></script>
+</html>

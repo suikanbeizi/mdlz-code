@@ -1,0 +1,36 @@
+{
+  "name": "mdlzLogin",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": " supervisor ./bin/www "
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^1.3.2",
+    "cookie-parser": "~1.4.3",
+    "crypto": "0.0.3",
+    "db": "^1.0.6",
+    "debug": "~2.6.3",
+    "ejs": "~2.5.6",
+    "express": "~4.15.2",
+    "express-ejs-layouts": "^2.3.1",
+    "express-partials": "^0.3.0",
+    "express-session": "^1.15.5",
+    "mongodb": "^2.2.30",
+    "morgan": "~1.8.1",
+    "mysql": "^2.15.0",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  }
+}

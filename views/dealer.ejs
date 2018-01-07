@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <link rel="stylesheet" href="stylesheets/second.css">
+    <link rel="stylesheet" href="stylesheets/progress.css">
+    <link rel="stylesheet" href="stylesheets/area.css">
+    <title>区域经销商</title>
+</head>
+<body>
+<div id="container" tabindex="0">
+    <div class="ceju">
+        <input type="button" class="" value="开始测距" onClick="javascript:startRuler()"/>
+    </div>
+    <div class="button">
+        <a href="javascript:void(0);" onclick="closewin();" class="home">HOME</a>
+    </div>
+    <div class="areaDiv">
+        <input type="button" class="areaShow" value="展示区域定位" title="first"/>
+    </div>
+    <div class="direction_button">
+        <p><a href="#" class="north">北<br/><img src="img/dir.png" alt=""></a></p>
+        <p><a href="#" class="west">西<img src="img/dir.png" alt="" style=" transform:rotate(-90deg)"></a><a href="#" class="Nation">全国</a><a href="#" class="east"><img src="img/dir.png" alt="" style=" transform:rotate(90deg)" >东</a>
+        </p>
+        <p style="margin-top: 0px;"><a href="#" class="south"><img src="img/dir.png" alt="" style=" transform:rotate(180deg)" ><br/>南</a></p>
+    </div>
+    <!--<div class="direction">-->
+        <!--<p><a href="#" class="ka">KA</a></p>-->
+        <!--<p><a href="#" class="ec">EC</a></p>-->
+        <!--<p><a href="#" class="afh">AFH</a></p>-->
+        <!--<p><a href="#" class="eB2B">eB2B</a></p>-->
+        <!--<p><a href="#" class="unmatched">unmatched</a></p>-->
+    <!--</div>-->
+    <!-- <div class="dealer-lagend">
+        <p><span class="lagend dealer-lagend1"></span><span>DT with Positive Change</span></p>
+        <p><span class="lagend dealer-lagend2"></span><span>DT with Nagative Change</span></p>
+        <p><span class="lagend dealer-lagend3"></span><span>DT without Order</span></p>
+    </div> -->
+    <div class="avgTip">
+        <h1 class="avg_ordersize"></h1>
+    </div>
+    <!--<div class="show_tab" >-->
+        <!--<button class="show_button" type="button" title="first">显示</button><br/>-->
+        <!--<button class="tab_button1" type="button">Customer</button><br/>-->
+        <!--<button class="tab_button2" type="button">Cat</button>-->
+    <!--</div>-->
+    <div class="third-cont" id="third-cont">
+
+    </div>
+</div>
+
+
+
+<div class="sidebar sidebar1">
+
+    <div class="MTD">
+        <h2>Area Summary <span style="float: right;margin-right: 20px;" class="time"></span></h2>
+        <h1></h1>
+        <!-- <div id="process" class="process"></div> -->
+    </div>
+    <div class="GS">
+    </div>
+    <div class="DT">
+        <h1 >Monthly GS by Category</h1>
+        <!-- <div id="DT_Pie" class="DT_Pie"></div>
+        <div class="DT_pie_lagend">
+
+        </div> -->
+        <div id="DT_bar" class="DT_bar"></div>
+    </div>
+    <div class="customer">
+        <h1 class="customerDetail">Customer details</h1>
+        <h1 class="customerName"></h1>
+        <h1 class="customerSales"></h1>
+        <h1>Monthly Sales vs PP & vs LY</h1>
+        <div class="avgChart" id="avgChart">
+
+        </div>
+    </div>
+
+    <hr>
+    <div class="avg">
+        <h1>Customer avg.Order Size</h1>
+        <h1 class="avgSize"> </h1>
+        <div id="customerBar" class="customerBar">
+        </div>
+    </div>
+</div>
+<div class="sidebar sidebar2" style="display: none;">
+    <div class="cat">
+        <div class="classify" title="Biscuits">
+            <div class="classify_left">
+                <img src="img/Picture1.png" alt="">
+                <p><span class="classify_cont Biscuits_track"></span><span></span></p>
+                <p><span class="classify_cont Biscuits_dp"></span><span></span></p>
+            </div>
+            <div class="classify_right" id="classify_right">
+
+            </div>
+        </div>
+        <div class="classify" title="Chocolate">
+            <div class="classify_left">
+                <img src="img/Picture2.png" alt="">
+                <p><span class="classify_cont Chocolate_track"></span><span></span></p>
+                <p><span class="classify_cont Chocolate_dp"></span><span></span></p>
+            </div>
+            <div class="classify_right" id="classify_right1">
+
+            </div>
+        </div>
+        <div class="classify" title="Candy">
+            <div class="classify_left">
+                <img src="img/Picture3.png" alt="">
+                <p><span class="classify_cont Candy_track"></span><span></span></p>
+                <p><span class="classify_cont Candy_dp"></span><span></span></p>
+            </div>
+            <div class="classify_right" id="classify_right2">
+
+            </div>
+        </div>
+        <div class="classify" title="Gum">
+            <div class="classify_left">
+                <img src="img/Picture4.png" alt="">
+                <p><span class="classify_cont Gum_track"></span><span></span></p>
+                <p><span class="classify_cont Gum_dp"></span><span></span></p>
+            </div>
+            <div class="classify_right" id="classify_right3">
+
+            </div>
+        </div>
+        <div class="classify" title="Beverage">
+            <div class="classify_left" >
+                <img src="img/Picture5.png" alt="">
+                <p><span class="classify_cont Beverage_track"></span><span></span></p>
+                <p><span class="classify_cont Beverage_dp"></span><span></span></p>
+            </div>
+            <div class="classify_right" id="classify_right4">
+
+            </div>
+        </div>
+        <div class="classify" title="Cheese">
+            <div class="classify_left" >
+                <img src="img/Picture6.png" alt="">
+                <p><span class="classify_cont Cheese_track"></span><span></span></p>
+                <p><span class="classify_cont Cheese_dp"></span><span></span></p>
+            </div>
+            <div class="classify_right" id="classify_right5">
+
+            </div>
+        </div>
+    </div>
+    <div class="cat_process">
+        <div class="mtd_process public_process">
+
+        </div>
+        <div class="qtd_process public_process">
+
+        </div>
+        <div class="ytd_process public_process">
+
+        </div>
+    </div>
+    <div class="monthlySale" id="monthlySale">
+
+    </div>
+</div>
+<div class="left_sidebar left_sidebar1">
+    <div class="DtOrder">
+        <h1>Order status by Customers</h1>
+        <div id="DtOrder_bar" class="DtOrder_bar"></div>
+    </div>
+    <div class="crosstab">
+        <h1></h1>
+        <div class="tableCross">
+            <div class="content_div">
+                <table class="tableContent" border="1" cellpadding="0" cellspacing="0">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="left_sidebar left_sidebar2" style="display: none;">
+    <div class="am-panel-group left_sidebar2_cont" id="accordion">
+
+        <div class="am-panel am-panel-default first-title" id="first-title">
+            <div class="am-panel-hd">
+                <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-1'}">Biscuits</h4>
+            </div>
+            <div id="do-not-say-1" class="am-panel-collapse am-collapse">
+                <div class="am-panel-bd">
+                    <ul class="third-sort Biscuits-third-sort">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="am-panel am-panel-default first-title" id="first-title">
+            <div class="am-panel-hd">
+                <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-2'}">Chocolate</h4>
+            </div>
+            <div id="do-not-say-2" class="am-panel-collapse am-collapse">
+                <div class="am-panel-bd">
+                    <ul class="third-sort Chocolate-third-sort">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="am-panel am-panel-default first-title" id="first-title">
+            <div class="am-panel-hd">
+                <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">Candy</h4>
+            </div>
+            <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+                <div class="am-panel-bd ">
+                    <ul class="third-sort Candy-third-sort">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="am-panel am-panel-default first-title" id="first-title">
+            <div class="am-panel-hd">
+                <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-4'}">Gum</h4>
+            </div>
+            <div id="do-not-say-4" class="am-panel-collapse am-collapse">
+                <div class="am-panel-bd">
+                    <ul class="third-sort Gum-third-sort">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="am-panel am-panel-default first-title" id="first-title">
+            <div class="am-panel-hd">
+                <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-5'}">Beverage</h4>
+            </div>
+            <div id="do-not-say-5" class="am-panel-collapse am-collapse">
+                <div class="am-panel-bd">
+                    <ul class="third-sort Beverage-third-sort">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="am-panel am-panel-default first-title" id="first-title">
+            <div class="am-panel-hd">
+                <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-6'}">Cheese</h4>
+            </div>
+            <div id="do-not-say-6" class="am-panel-collapse am-collapse">
+                <div class="am-panel-bd">
+                    <ul class="third-sort Cheese-third-sort">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<ul id="funnelPanel"></ul>
+<div id="panel" class="scrollbar1">
+    <ul id="area-tree">
+    </ul>
+</div>
+<!--<ul id="funnelPanel1"></ul>-->
+<script>
+
+
+
+</script>
+<script src="javascripts/marker.js"></script>
+<script src="https://webapi.amap.com/maps?v=1.3&key=6307a2e6f863ba5fd0d8c050bb4d0f40&plugin=AMap.MarkerClusterer,AMap.Scale,AMap.DistrictSearch,AMap.ToolBar"></script>
+<script src="https://webapi.amap.com/ui/1.0/main.js"></script>
+<script src="javascripts/jquery-2.1.3.min.js"></script>
+<script src="javascripts/echarts.min.js"></script>
+<script src="javascripts/charts.js"></script>
+<script src="javascripts/map.js"></script>
+<script src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+<script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+</body>
+<script>
+    function myrefresh()
+    {
+        var myDate = new Date();
+        var nowDate = myDate.getHours()+'-'+myDate.getMinutes()+'-'+myDate.getSeconds();
+        if(nowDate === '8-0-0'){
+            window.location.reload();
+        }
+
+    }
+    setInterval('myrefresh()',1000);
+    function closewin(){
+        if (navigator.userAgent.indexOf("Firefox") != -1 || navigator.userAgent.indexOf("Chrome") !=-1) {
+            window.open('','_self','');
+            window.close();
+            // window.open("about:blank","_top").close()
+        } else {
+            window.opener = null;
+            window.open("", "_self");
+            window.close();
+            //window.open("about:blank","_top").close()
+        }
+    }
+
+    $('.tableCross tr td ').width($('.tableCross').width());
+
+    // var url = window.location.href;
+
+    // $(window).resize(function(){
+    // 　　window.location.href = url;
+    // });
+    var time=new Date();
+    var month = parseInt(time.getMonth(), 10);
+    var d= new Date(time.getFullYear(), month, 0);
+    if(time.getDate() === 1){
+        $('.time').html(time.getFullYear()+'-'+(time.getMonth())+'-'+ (d.getDate()));
+    }
+    else{
+        $('.time').html(time.getFullYear()+'-'+(time.getMonth()+1)+'-'+ (time.getDate()-1));
+
+    }
+    $('.avgSize').mousemove(function(e) {
+        e = e || window.event;
+        $('.avgTip').css("display","block");
+        $('.avgTip').css("left",(e.pageX-80));
+        $('.avgTip').css("top",(e.pageY-60));
+    });
+    $('.avgSize').mouseleave(function(event) {
+        $('.avgTip').css("display","none");
+    });
+
+
+    $(document).bind('click',function(e){
+        var e = e || window.event; //浏览器兼容性
+        var elem = e.target || e.srcElement;
+        while (elem) { //循环判断至跟节点，防止点击的是div子元素
+            if (elem.id && elem.id=='first-title') {
+                return;
+            }
+            elem = elem.parentNode;
+        }
+
+        $('#third-cont').css('display','none'); //点击的不是div或其子元素
+    });
+
+
+</script>
+</html>
